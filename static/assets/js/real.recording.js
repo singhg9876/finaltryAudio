@@ -90,14 +90,25 @@ $("#submit").on("click", function (event) {
   //   change the button text and disable it
   btn.html("Submitting...").prop("disabled", true).addClass("disable-btn");
   //   create a new File with the recordedData and its name
-  const recordedFile = new File([player.recordedData], `audiorecord.webm`);
-  //   grabs the value of the language field
-  const language = document.getElementById("language").value;
+  // const recordedFile = new File([player.recordedData], `audiorecord.wav`);
+  // //   grabs the value of the language field
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const gender = document.getElementById("gender").value;
+  const native_state = document.getElementById("native_state").value;
+  const Mother_Tongue = document.getElementById("Mother_Tongue").value;
+  const Proficiency = document.getElementById("Proficiency").value;
+  const recordedFile = new File([player.recordedData], `${name}_${gender}_${age}_${native_state}_${Mother_Tongue}.wav`); 
   //   initializes an empty FormData
   let data = new FormData();
   //   appends the recorded file and language value
   data.append("recorded_audio", recordedFile);
-  data.append("language", language);
+  data.append("name", name);
+  data.append("age", age);
+  data.append("gender", gender);
+  data.append("native_state", native_state);
+  data.append("Mother_Tongue", Mother_Tongue);
+  data.append("Proficiency", Proficiency );
   //   post url endpoint
   const url = "";
   $.ajax({
