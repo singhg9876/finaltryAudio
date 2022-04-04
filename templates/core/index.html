@@ -1,23 +1,3 @@
-<!-- {% extends '_base.html' %}
-{% block title %}{{page_title}}{% endblock title %}
-{% block content %}
-<section class="section">
-  <div class="container">
-    <h1 class="title has-text-centered">Recorded audios</h1>
-    {% for record in records %}
-    <div class="level-item has-text-centered">
-      <div>
-        <audio src="{{record.voice_record.url}}" controls></audio>
-        <p>Language: {{record.language}}</p>
-      </div>
-    </div>
-
-    {% endfor %}
-  </div>
-</section>
-{% endblock content %} -->
-
-
 <!--inherits the layout-->
 {% extends '_base.html' %}
 <!--passes the page title-->
